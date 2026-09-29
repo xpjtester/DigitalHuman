@@ -1,0 +1,32 @@
+{
+  "project": "DigitalHuman",
+  "format": {
+    "aspectRatio": "9:16",
+    "durationSeconds": 10,
+    "fps": 30
+  },
+  "persona": {
+    "style": "realistic Chinese selfie-vlog",
+    "camera": "handheld front-facing smartphone",
+    "framing": "close head-and-shoulders",
+    "performance": [
+      "natural blinking",
+      "small head turns",
+      "occasional off-camera glance",
+      "subtle walking motion",
+      "natural pauses"
+    ],
+    "avoid": [
+      "studio presenter",
+      "perfectly static camera",
+      "beauty-filter plastic skin",
+      "exaggerated gestures"
+    ]
+  },
+  "subtitles": {
+    "language": "zh-CN",
+    "position": "lower third",
+    "style": "bold white with dark outline"
+  },
+  "testScript": "你知道吗？荷兰的小孩一岁以后，很多就不喝奶粉了，直接开始喝超市里的普通牛奶。"
+}
