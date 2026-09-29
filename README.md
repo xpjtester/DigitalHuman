@@ -1,27 +1,28 @@
 # DigitalHuman
 
-Private MVP for generating a consistent selfie-vlog digital human from owner-authorized reference media.
+Private, local-first project for creating new owner-authorized selfie-vlog videos from existing reference footage.
 
-## V1 goal
-Generate a 5–10 second vertical (9:16) Chinese selfie-vlog test:
-> 你知道吗？荷兰的小孩一岁以后，很多就不喝奶粉了，直接开始喝超市里的普通牛奶。
+## V1 — €0 API cost
 
-Quality gates:
-- identity consistency
-- natural Chinese voice
-- believable lip sync
-- handheld selfie-vlog feeling
+No paid video/TTS APIs are required.
+
+Pipeline:
+existing selfie video → select 5–10s source segment → local Chinese voice clone/TTS → local lip sync → subtitles → FFmpeg MP4
+
+Preferred open-source stack:
+- F5-TTS — Mandarin-capable voice cloning/TTS
+- MuseTalk — lip synchronization
+- LivePortrait — optional portrait/head-motion experiments
+- Whisper — optional transcription/timing
+- FFmpeg — media extraction and final composition
 
 ## Privacy
-Do **not** commit reference videos, face images, voice samples, generated outputs, API keys, or provider credentials.
+Reference videos, face images, voice samples and generated media stay local. Never commit assets/private/, outputs/, media reference files, model weights, or secrets.
 
-Put private local media under `assets/private/`.
+## V1 test
+你知道吗？荷兰的小孩一岁以后，很多就不喝奶粉了，直接开始喝超市里的普通牛奶。
 
-## Pipeline
-1. Prepare owner-authorized reference media locally
-2. Generate/clone voice with a configured provider
-3. Generate avatar/video with a configured provider
-4. Add Chinese subtitles
-5. Export vertical MP4 to `outputs/`
+First target: 5–10 seconds, not a full 60–90 second video.
 
-Provider adapters are intentionally separated so the video/voice vendor can be changed without rewriting the project.
+Run: python scripts/check_system.py
+Then follow docs/LOCAL_SETUP.md.
