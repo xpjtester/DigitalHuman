@@ -1,0 +1,11 @@
+{
+  "name": "digital-human",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node src/cli.js check",
+    "plan": "node src/cli.js plan"
+  },
+  "engines": {"node": ">=20"}
+}
