@@ -1,32 +1,18 @@
 {
   "project": "DigitalHuman",
-  "format": {
-    "aspectRatio": "9:16",
-    "durationSeconds": 10,
-    "fps": 30
+  "strategy": "local-open-source-motion-template",
+  "costTarget": "0 EUR API",
+  "format": {"aspectRatio": "9:16", "targetDurationSeconds": 10, "fps": 30},
+  "source": {
+    "reuse": ["identity", "body motion", "walking motion", "camera motion", "background", "lighting"],
+    "replace": ["speech audio", "mouth motion", "subtitles"]
   },
-  "persona": {
-    "style": "realistic Chinese selfie-vlog",
-    "camera": "handheld front-facing smartphone",
-    "framing": "close head-and-shoulders",
-    "performance": [
-      "natural blinking",
-      "small head turns",
-      "occasional off-camera glance",
-      "subtle walking motion",
-      "natural pauses"
-    ],
-    "avoid": [
-      "studio presenter",
-      "perfectly static camera",
-      "beauty-filter plastic skin",
-      "exaggerated gestures"
-    ]
-  },
-  "subtitles": {
-    "language": "zh-CN",
-    "position": "lower third",
-    "style": "bold white with dark outline"
+  "stack": {
+    "voice": "F5-TTS",
+    "lipSync": "MuseTalk",
+    "portraitOptional": "LivePortrait",
+    "transcriptionOptional": "Whisper",
+    "compose": "FFmpeg"
   },
   "testScript": "你知道吗？荷兰的小孩一岁以后，很多就不喝奶粉了，直接开始喝超市里的普通牛奶。"
 }
